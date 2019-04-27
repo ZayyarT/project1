@@ -11,18 +11,18 @@ int main ()
  {
     int i1;
     for ( i1=0 ; i1=i1+1 ; i1++ ){                            // loop to ask when program finished
-    printf("\nEnter integer");                                // calling case number
+    printf("\nEnter integer:");                                // calling case number
     int z;
     scanf("%d",&z);
     switch(z){
              case 1: {
                   char string1[200];                          // array size for user input
                   int shift;                                  // assign integer for shifting
-                  printf("Enter text to be rotational encrypted : \n");  // printing to ask user
+                  printf("\nEnter text to be rotational encrypted :");  // printing to ask user
                   scanf("%c", &string1);
                   fgets (string1, 200 , stdin);               // string stdin
                  
-                  printf("enter shifts no: to the back:\n "); // printing to ask shift 1-10
+                  printf("enter shifts no: to the back: "); // printing to ask shift 1-10
                   scanf("%d", &shift);                        // store shift number for encrypt.
                  
                   caesar (string1, shift);                    // calling string1 encrypted function
@@ -33,11 +33,11 @@ int main ()
              case 2 : {
                  char string2[200];                           // array size for user input                        
                  int shift;                                   // assign integer for shifting  
-                 printf("Enter text to be rotational decrypted : \n");   // printing to ask user
+                 printf("\nEnter text to be rotational decrypted : ");   // printing to ask user
                  scanf("%c", &string2);
                  fgets (string2, 200 , stdin);                // string stdin
                  
-                 printf("enter shifts no: to the back:\n ");  // printing to ask shift 1-10
+                 printf("enter shifts no: to the back: ");  // printing to ask shift 1-10
                  scanf("%d", &shift);
                  
                   caesar1 (string2, shift);                   // calling string2 decrypted function
@@ -47,7 +47,7 @@ int main ()
              case 3 : {
                  char* ciphertext = "QWERTYUIOPASDFGHJKLZXCVBNM";    // Alpha-QWER keyboard cipher lookup
                  char strin[500];                                    // string 
-                 printf("Enter text for substitution encrypted: ");
+                 printf("\nEnter text for substitution encrypted: ");
                  scanf("%c",&strin);
                  fgets(strin,500,stdin);                             // string from user input
                  strin[strlen(strin) - 1] = 0;                       // remove the \n (newline)
@@ -64,13 +64,14 @@ int main ()
                  }  
                  }
                  strout[count] = 0;                                  // null-terminate the string
-                 fputs(strout, stdout);                              // final output 
+                 fputs(strout, stdout);                              // final output
+                 break;
                  }
 				 ///////////////////////////////////
              case 4 : {
                  char* ciphertext= "KXVMCNOPHQRSZYIJADLEGWBUFT";     //substitution  decrypted cipher
                  char strin[500];                                    // string
-                 printf("Enter text for substitution decrypted: ");
+                 printf("\nEnter text for substitution decrypted: ");
                  scanf("%c",&strin);
                  fgets(strin,500,stdin);                             //  string from user input
                  strin[strlen(strin) - 1] = 0;                       // remove the \n (newline)
@@ -89,6 +90,8 @@ int main ()
                  strout[count] = 0;                                  // null-terminate the string
                  fputs(strout, stdout);                              // final output 
                  }
+                 break;
+                 /////////////////////////////////////
                  case 0 : {
                      printf (" \nProgram finished:");
                      printf (" \nHAPPY DAY!");
@@ -154,4 +157,3 @@ int main ()
   fputs( string2,stdout);
   
 }
-   
